@@ -11,6 +11,35 @@ if(isset($_SESSION['qty'])){
     $meQty = 0;
 }
 ?>
+
+<style>
+    .main-menu>li>a{
+        color: <?php echo $siteconfig['link_color'];?>;
+    }
+    .main-menu>li:hover>a,.sub-menu>li:hover>a,.hov-cl1:hover,.right-top-bar a:hover{
+        color: <?php echo $siteconfig['link2_color'];?>;
+    }
+    .btn-back-to-top,.btn-back-to-top:hover,.page-item.active .page-link{
+        background-color: <?php echo $siteconfig['link2_color'];?>;
+    }
+    .page-link:focus, .page-link:hover{
+        background-color: <?php echo $siteconfig['link2_color'];?>;
+        color: <?php echo $siteconfig['link_color'];?>;
+    }
+    .bg1{
+        background-color: <?php echo $siteconfig['button_color'];?>;
+    }
+    .top-bar,.topbar-mobile li{
+        background-color: <?php echo $siteconfig['bgtopbar_color'];?>;
+    }
+    .header-v4 .wrap-menu-desktop,.main-menu-m{
+        background-color: <?php echo $siteconfig['bgtop_color'];?>;
+    }
+    .bg3{
+        background-color: <?php echo $siteconfig['bgfooter_color'];?>;
+    }
+</style>
+
 <!-- Header desktop -->
 <div class="container-menu-desktop">
     <!-- Topbar -->

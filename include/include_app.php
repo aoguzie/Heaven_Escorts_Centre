@@ -14,4 +14,7 @@
             }
         }
     }
+
+    $siteconfig = get_siteConfig($conn);
+
 ?>

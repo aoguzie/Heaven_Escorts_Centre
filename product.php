@@ -25,7 +25,11 @@
 		// }
 	
 	}else{
-		header("Location:index.php?action=failed");
+		$sqlPro = "SELECT * FROM `lc_product` WHERE status = '1' ORDER BY id DESC";
+		$quPro = mysqli_query($conn,$sqlPro);
+		$totalPro = mysqli_num_rows($quPro);
+		$query_str = '';
+		//header("Location:index.php?action=failed");
 	}
 	
 	if(isset($_GET['catsub_id']) && $_GET['catsub_id'] != ""){
@@ -97,15 +101,15 @@
 
 	<!-- breadcrumb -->
 	<div class="container">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<div class="bread-crumb flex-w p-l-0 p-r-0 p-t-30 p-lr-0-lg">
 			<a href="index.php" class="stext-109 cl8 hov-cl1 trans-04">
 				<?php echo HOME;?>
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
-
-			<a href="product.php?cat_id=<?php echo encode($cat_id,LIAM_COINS_KEY);?>" class="stext-109 cl8 hov-cl1 trans-04">
+			
+			<a href="javascript:void(0);" class="stext-109 cl8 hov-cl1 trans-04">
 				<?php echo get_category_name($conn,$cat_id);?>
-				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+				<!-- <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i> -->
 			</a>
 
 			<?php
@@ -117,9 +121,9 @@
 			<?php
 			}else{
 				?>
-				<span class="stext-109 cl4">
-					New arrivals
-				</span>
+				<!-- <span class="stext-109 cl4">
+					New model
+				</span> -->
 				<?php
 			}
 			?>
@@ -128,52 +132,68 @@
 
 	
 	<!-- Product -->
-	<div class="bg0 m-t-23 p-b-140 p-t-50">
+	<div class="bg0 m-t-23 p-b-140">
 		<div class="container">
+
+			<div class="row p-b-30 p-t-10">
+				<div class="col-12 text-center">
+				<button tyle="button" class="stext-103 cl2 size-105 bg1 bor2 hov-btn1 trans-04 m-b-10" onclick="location.href='product.php'">All</button>
+				<!-- <a class="stext-103 cl2 bg2 bor2 hov-btn1 p-lr-20 p-tb-5 trans-04" href="product.php">All</a> -->
+				<?php 
+				$sqlProCat = "SELECT * FROM `lc_category` ORDER BY id ASC";
+				$quProCat = mysqli_query($conn,$sqlProCat);
+				while($rowProCat = mysqli_fetch_array($quProCat, MYSQLI_ASSOC)){ // วนลูปแสดงรายการ
+					?>
+					<button tyle="button" class="stext-103 cl2 size-105 bg1 bor2 hov-btn1 trans-04 m-b-10" onclick="location.href='product.php?cat_id=<?php echo encode($rowProCat['id'],LIAM_COINS_KEY);?>'"><?php echo $rowProCat['name'];?></button>
+					<!-- <a class="stext-103 cl2 bg2 bor2 hov-btn1 p-lr-20 p-tb-5 trans-04" href="product.php?cat_id=<?php echo encode($rowProCat['id'],LIAM_COINS_KEY);?>"><?php echo $rowProCat['name'];?></a> -->
+					<?php
+				}
+				?>
+				</div>
+			</div>
 
 			<div class="row isotope-grid">
 
 			<?php
-			while($rowProS = mysqli_fetch_array($quProS, MYSQLI_ASSOC)){ // วนลูปแสดงรายการ
+			while($rowPro = mysqli_fetch_array($quProS, MYSQLI_ASSOC)){ // วนลูปแสดงรายการ
 				$num++;
 				?>
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
 					<div class="block2">
 						<div class="block2-pic hov-img0">
-						<?php
-                            $proImages = '';
-                            if(!empty($rowProS['images'])){
-                                $proImages = 'uploads/product/'.$rowProS['images'];
-                            }else{
-                                $proImages = 'uploads/product/none.jpg';
-                            }
-                        ?>
-                        	<a href="product-detail.php?id=<?php echo encode($rowProS['id'],LIAM_COINS_KEY);?>"><img src="<?php echo $proImages;?>" alt="<?php echo $rowProS['name'];?>"></a>
+							<?php
+								$proImages = '';
+								if(!empty($rowPro['images'])){
+									$proImages = 'uploads/product/'.$rowPro['images'];
+								}else{
+									$proImages = 'uploads/product/none.jpg';
+								}
+							?>
+							<img src="<?php echo $proImages;?>" alt="<?php echo $rowPro['name'];?>">
 
-							<!-- <a href="product-detail.php?id=<?php echo encode($rowProS['id'],LIAM_COINS_KEY);?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg1 bor2 hov-btn1 p-lr-15 trans-04">
+							<!-- <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg1 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 								<?php echo QUICK_VIEW;?>
 							</a> -->
-							
-							<!-- <a href="product-detail.php?id=<?php echo encode($rowProS['id'],LIAM_COINS_KEY);?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg1 bor2 hov-btn1 p-lr-15 trans-04">
-								ADD TO CART
-							</a> -->
+							<a href="product-detail.php?id=<?php echo encode($rowPro['id'],LIAM_COINS_KEY);?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg1 bor2 hov-btn1 p-lr-15 trans-04">
+								<?php echo QUICK_VIEW;?>
+							</a>
 
-							<button tyle="button" class="block2-btn flex-c-m stext-103 cl2 size-102 bg1 bor2 hov-btn1 p-lr-15 trans-04" onclick="addToCart('<?php echo $rowProS['id'];?>','<?php echo $rowProS['name'];?>')">ADD TO CART</button>
+							<!-- <button tyle="button" class="block2-btn flex-c-m stext-103 cl2 size-102 bg1 bor2 hov-btn1 p-lr-15 trans-04" onclick="addToCart('<?php echo $rowPro['id'];?>','<?php echo $rowPro['name'];?>')">ADD TO CART</button> -->
 
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<a href="product-detail.php?id=<?php echo encode($rowProS['id'],LIAM_COINS_KEY);?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-									<?php echo $rowProS['name'];?>
+								<a href="product-detail.php?id=<?php echo encode($rowPro['id'],LIAM_COINS_KEY);?>" class="stext-104 cl5 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<?php echo $rowPro['name'].", ".$rowPro['age'];?><br>
+									<?php echo $rowPro['description'];?>
 								</a>
 
-								<span class="stext-105 cl3">
-									<?php echo LIAM_COINS_CURRENCY.number_format($rowProS['price'],2);?>
-								</span>
+								<!-- <span class="stext-105 cl3">
+									<?php echo LIAM_COINS_CURRENCY.number_format($rowPro['price'],2);?>
+								</span> -->
 							</div>
-
 						</div>
 					</div>
 				</div>

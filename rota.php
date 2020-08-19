@@ -1,14 +1,8 @@
-<?php include_once("include/include_app.php");
-	if(isset($_GET['key']) && $_GET['key'] != ""){
-		$email = decode($_GET['key'],LIAM_COINS_KEY);
-	}else{
-		die();
-	}
-?>
+<?php include_once("include/include_app.php");?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Registration</title>
+	<title><?php echo ROTA;?></title>
 	<?php include_once('head_meta.php');?>
 </head>
 <body class="animsition">
@@ -35,7 +29,7 @@
 			</a>
 
 			<span class="stext-109 cl4">
-				Registration
+				<?php echo ROTA;?>
 			</span>
 
 		</div>
@@ -48,15 +42,11 @@
 				<div class="col-md-12 col-lg-12">
 					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
 						<h3 class="mtext-111 cl2 p-b-20 text-center">
-							Registration
+							<?php echo ROTA;?>
 						</h3>
 
 						<div class="stext-113 cl6 p-b-26">
-							<?php 
-							$string = get_page($conn,13);
-							$content = sprintf($string,$email);;
-							?>
-							<center><?php echo $content;?></center>
+							<?php echo get_page($conn,1);?>
 						</div>
 
 					</div>

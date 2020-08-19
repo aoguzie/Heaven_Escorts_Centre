@@ -7,22 +7,22 @@
             </li>
 
             <li>
-                <a href="#"><?php echo ESCORTS;?></a>
+                <a href="product.php"><?php echo ESCORTS;?></a>
             </li>
             <li>
-                <a href="#"><?php echo ROTA;?></a>
+                <a href="rota.php"><?php echo ROTA;?></a>
             </li>
             <li>
-                <a href="#"><?php echo FAQS;?></a>
+                <a href="faqs.php"><?php echo FAQS;?></a>
             </li>
             <li>
-                <a href="#"><?php echo WORK_WITH_US;?></a>
+                <a href="work-with-us.php"><?php echo WORK_WITH_US;?></a>
             </li>
             <li>
-                <a href="#"><?php echo VIP_EXPERINCE;?></a>
+                <a href="vip-experince.php"><?php echo VIP_EXPERINCE;?></a>
             </li>
             <li>
-                <a href="#"><?php echo CONTACT_US;?></a>
+                <a href="contact-us.php"><?php echo CONTACT_US;?></a>
             </li>
 
             <!-- <li>

@@ -38,7 +38,7 @@ function get_category_name($conn,$cat_id){
         $rowCat = mysqli_fetch_array($quCat, MYSQLI_ASSOC);
         return $rowCat['name'];
     }else{
-        return "All Categories";
+        return "All Model";
     }
     
 }
@@ -211,4 +211,10 @@ function login_process($conn,$cus_email,$cus_passwordT){
     }
 }
 
+function get_siteConfig($conn){
+    $sqlPage = "SELECT * FROM `lc_setting` WHERE 1 LIMIT 1 ";
+    $quPage = mysqli_query($conn,$sqlPage);
+    $rowPage = mysqli_fetch_array($quPage, MYSQLI_ASSOC);
+    return $rowPage;
+}
 ?>

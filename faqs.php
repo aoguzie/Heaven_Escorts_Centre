@@ -22,7 +22,7 @@
 	
 	<!-- breadcrumb -->
 	<div class="container">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<div class="bread-crumb flex-w p-l-0 p-r-0 p-t-30 p-lr-0-lg">
 			<a href="index.php" class="stext-109 cl8 hov-cl1 trans-04">
 				<?php echo HOME;?>
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
@@ -41,14 +41,19 @@
 			<div class="row p-b-148">
 				<div class="col-md-12 col-lg-12">
 					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
-						<h3 class="mtext-111 cl2 p-b-20 text-center">
-							FAQs
+						<h3 class="mtext-111 cl2 p-b-35 text-center">
+							FAQs - Heaven Escorts Centre
 						</h3>
-
-						<div class="stext-113 cl6 p-b-26">
-							<?php echo get_page($conn,10);?>
+						<?php 
+						$sqlFaqs = "SELECT * FROM lc_faqs WHERE 1 AND `status` = '1' ORDER BY `id` DESC";
+						$quFaqs = mysqli_query($conn,$sqlFaqs);
+						while($rowFaqs = mysqli_fetch_array($quFaqs, MYSQLI_ASSOC)){ // วนลูปแสดงรายการ
+						?>
+						<div class="row p-b-35">
+							<div class="col-12 p-b-10"><strong><?php echo stripslashes($rowFaqs['question']);?></strong></div>
+							<div class="col-12"><?php echo stripslashes($rowFaqs['answer']);?></div>
 						</div>
-
+						<?php }?>
 					</div>
 				</div>
 			</div>

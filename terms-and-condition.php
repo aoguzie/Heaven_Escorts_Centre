@@ -22,7 +22,7 @@
 	
 	<!-- breadcrumb -->
 	<div class="container">
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+		<div class="bread-crumb flex-w p-l-0 p-r-0 p-t-30 p-lr-0-lg">
 			<a href="index.php" class="stext-109 cl8 hov-cl1 trans-04">
 				<?php echo HOME;?>
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
@@ -46,7 +46,7 @@
 						</h3>
 
                         <div class="stext-113 cl6 p-b-26">
-							<?php echo get_page($conn,12);?>
+							<?php echo get_page($conn,5);?>
 						</div>
 					</div>
 				</div>
