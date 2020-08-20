@@ -148,7 +148,7 @@ function getCatsub(){
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label">Images</label>
+              <label class="control-label">Images 01<br><small>Size : 1200px X 1486px</small></label>
               <div class="controls">
                 <input type="file" name="pro_images"/>
                 <?php 
@@ -162,6 +162,86 @@ function getCatsub(){
                   }
                   ?>
                   <input type="hidden" name="pro_images_old" value="<?php echo $proIMG;?>">
+                  <?php
+                }
+                ?>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Images 02<br><small>Size : 1200px X 1486px</small></label>
+              <div class="controls">
+                <input type="file" name="pro_images2"/>
+                <?php 
+                if(isset($rowProE['images2'])){
+                  $proIMG2 = "";
+                  if(!empty($rowProE['images2'])){
+                    $proIMG2 = $rowProE['images2'];
+                    ?>
+                    <br><br><img src="../uploads/product/<?php echo $proIMG2;?>" style="height: 150px;"/>
+                    <?php
+                  }
+                  ?>
+                  <input type="hidden" name="pro_images_old2" value="<?php echo $proIMG2;?>">
+                  <?php
+                }
+                ?>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Images 03<br><small>Size : 1200px X 1486px</small></label>
+              <div class="controls">
+                <input type="file" name="pro_images3"/>
+                <?php 
+                if(isset($rowProE['images3'])){
+                  $proIMG3 = "";
+                  if(!empty($rowProE['images3'])){
+                    $proIMG3 = $rowProE['images3'];
+                    ?>
+                    <br><br><img src="../uploads/product/<?php echo $proIMG3;?>" style="height: 150px;"/>
+                    <?php
+                  }
+                  ?>
+                  <input type="hidden" name="pro_images_old3" value="<?php echo $proIMG3;?>">
+                  <?php
+                }
+                ?>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Images 04<br><small>Size : 1200px X 1486px</small></label>
+              <div class="controls">
+                <input type="file" name="pro_images4"/>
+                <?php 
+                if(isset($rowProE['images4'])){
+                  $proIMG4 = "";
+                  if(!empty($rowProE['images4'])){
+                    $proIMG4 = $rowProE['images4'];
+                    ?>
+                    <br><br><img src="../uploads/product/<?php echo $proIMG4;?>" style="height: 150px;"/>
+                    <?php
+                  }
+                  ?>
+                  <input type="hidden" name="pro_images_old4" value="<?php echo $proIMG4;?>">
+                  <?php
+                }
+                ?>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Images 05<br><small>Size : 1200px X 1486px</small></label>
+              <div class="controls">
+                <input type="file" name="pro_images5"/>
+                <?php 
+                if(isset($rowProE['images5'])){
+                  $proIMG5 = "";
+                  if(!empty($rowProE['images5'])){
+                    $proIMG5 = $rowProE['images5'];
+                    ?>
+                    <br><br><img src="../uploads/product/<?php echo $proIMG5;?>" style="height: 150px;"/>
+                    <?php
+                  }
+                  ?>
+                  <input type="hidden" name="pro_images_old5" value="<?php echo $proIMG5;?>">
                   <?php
                 }
                 ?>

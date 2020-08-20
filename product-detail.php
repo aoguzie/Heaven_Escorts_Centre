@@ -105,9 +105,38 @@
 								}else{
 									$proImages = 'uploads/product/none.jpg';
 								}
+
+								$proImages2 = '';
+								if(!empty($rowPro['images2'])){
+									$proImages2 = 'uploads/product/'.$rowPro['images2'];
+								}else{
+									$proImages2 = 'uploads/product/none.jpg';
+								}
+
+								$proImages3 = '';
+								if(!empty($rowPro['images3'])){
+									$proImages3 = 'uploads/product/'.$rowPro['images3'];
+								}else{
+									$proImages3 = 'uploads/product/none.jpg';
+								}
+
+								$proImages4 = '';
+								if(!empty($rowPro['images4'])){
+									$proImages4 = 'uploads/product/'.$rowPro['images4'];
+								}else{
+									$proImages4 = 'uploads/product/none.jpg';
+								}
+
+								$proImages5 = '';
+								if(!empty($rowPro['images5'])){
+									$proImages5 = 'uploads/product/'.$rowPro['images5'];
+								}else{
+									$proImages5 = 'uploads/product/none.jpg';
+								}
 							?>
 
 							<div class="slick3 gallery-lb">
+								
 								<div class="item-slick3" data-thumb="<?php echo $proImages;?>">
 									<div class="wrap-pic-w pos-relative">
 										<img src="<?php echo $proImages;?>" alt="<?php echo $rowPro['name'];?>">
@@ -117,6 +146,64 @@
 										</a>
 									</div>
 								</div>
+
+								<?php 
+								if(!empty($rowPro['images2'])){
+									?>
+									<div class="item-slick3" data-thumb="<?php echo $proImages2;?>">
+										<div class="wrap-pic-w pos-relative">
+											<img src="<?php echo $proImages2;?>" alt="<?php echo $rowPro['name'];?>">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImages2;?>">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+									<?php
+								}
+
+								if(!empty($rowPro['images3'])){
+									?>
+									<div class="item-slick3" data-thumb="<?php echo $proImages3;?>">
+										<div class="wrap-pic-w pos-relative">
+											<img src="<?php echo $proImages3;?>" alt="<?php echo $rowPro['name'];?>">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImages3;?>">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+									<?php
+								}
+
+								if(!empty($rowPro['images4'])){
+									?>
+									<div class="item-slick3" data-thumb="<?php echo $proImages4;?>">
+										<div class="wrap-pic-w pos-relative">
+											<img src="<?php echo $proImages4;?>" alt="<?php echo $rowPro['name'];?>">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImages4;?>">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+									<?php
+								}
+
+								if(!empty($rowPro['images5'])){
+									?>
+									<div class="item-slick3" data-thumb="<?php echo $proImages5;?>">
+										<div class="wrap-pic-w pos-relative">
+											<img src="<?php echo $proImages5;?>" alt="<?php echo $rowPro['name'];?>">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImages5;?>">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+									<?php
+								}
+								?>
 
 								<!-- <div class="item-slick3" data-thumb="images/product-detail-02.jpg">
 									<div class="wrap-pic-w pos-relative">
@@ -183,7 +270,7 @@
 				</div>
 			</div>
 
-			<div class="bor10 m-t-50 p-t-43 p-b-40">
+			<div class="bor10 m-t-50 p-t-43 p-b-40 hide">
 				<!-- Tab01 -->
 				<div class="tab01">
 					<!-- Nav tabs -->

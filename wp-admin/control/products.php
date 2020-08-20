@@ -44,6 +44,98 @@
         
                     } // end if ($_FILES[pro_images][name] != "")	
 
+                    if ($_FILES['pro_images2']['name'] != "") { 
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images2']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images2"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images2"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images2` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
+                    if ($_FILES['pro_images3']['name'] != "") { 
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images3']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images3"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images3"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images3` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
+                    if ($_FILES['pro_images4']['name'] != "") { 
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images4']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images4"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images4"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images4` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
+                    if ($_FILES['pro_images5']['name'] != "") { 
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images5']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images5"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images5"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images5` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
                     header("Location:../products.php?action=success");
                     
                 }else if($mode === "update"){
@@ -73,6 +165,106 @@
                         
                         @move_uploaded_file($_FILES["pro_images"]["tmp_name"], $target_file);
                         $sqlImg = "UPDATE `lc_product` SET `images` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
+                    if ($_FILES['pro_images2']['name'] != "") { 
+                        
+                        @unlink("../../uploads/product/".$_POST['pro_images_old2']);
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images2']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images2"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images2"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images2` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
+                    if ($_FILES['pro_images3']['name'] != "") { 
+                        
+                        @unlink("../../uploads/product/".$_POST['pro_images_old3']);
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images3']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images3"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images3"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images3` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
+                    if ($_FILES['pro_images4']['name'] != "") { 
+                        
+                        @unlink("../../uploads/product/".$_POST['pro_images_old4']);
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images4']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images4"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images4"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images4` = '".$filename."' WHERE `id` = '".$pro_id."' ";
+                        @mysqli_query($conn, $sqlImg);	
+        
+                    } // end if ($_FILES[pro_images][name] != "")	
+
+                    if ($_FILES['pro_images5']['name'] != "") { 
+                        
+                        @unlink("../../uploads/product/".$_POST['pro_images_old5']);
+
+                        $mname="";
+                        $mname=date("YmdHis").rand(100,999);
+                        $filename = "";
+                        if($filename == "")
+                        $name_data=explode(".",$_FILES['pro_images5']['name']);
+                        $type = $name_data[1];
+                        $filename = $mname.".".$type;
+                        
+                        $target_dir = "../../uploads/product/";
+                        $target_file = $target_dir . basename($filename);
+                        $uploadOk = 1;
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        // Check if image file is a actual image or fake image
+                        $check = getimagesize($_FILES["pro_images5"]["tmp_name"]);
+                        
+                        @move_uploaded_file($_FILES["pro_images5"]["tmp_name"], $target_file);
+                        $sqlImg = "UPDATE `lc_product` SET `images5` = '".$filename."' WHERE `id` = '".$pro_id."' ";
                         @mysqli_query($conn, $sqlImg);	
         
                     } // end if ($_FILES[pro_images][name] != "")	
