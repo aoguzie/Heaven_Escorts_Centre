@@ -3946,3 +3946,15 @@ textarea {
     color: #FFF;
     padding: 5px 15px;
 }
+
+.tbcustom th {
+    white-space: nowrap;
+    padding-right: 25px;
+}
+
+.table-dark,
+.table-dark>td,
+.table-dark>th {
+    background-color: #000000;
+    color: #FFF;
+}

@@ -148,7 +148,7 @@ function getCatsub(){
               </div>
             </div>
             <div class="control-group">
-              <label class="control-label">Images 01<br><small>Size : 1200px X 1486px</small></label>
+              <label class="control-label">Images Model<br><small>Size : 1200px X 1486px</small></label>
               <div class="controls">
                 <input type="file" name="pro_images"/>
                 <?php 
@@ -245,6 +245,200 @@ function getCatsub(){
                   <?php
                 }
                 ?>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Images 06<br><small>Size : 1200px X 1486px</small></label>
+              <div class="controls">
+                <input type="file" name="pro_images6"/>
+                <?php 
+                if(isset($rowProE['images6'])){
+                  $proIMG6 = "";
+                  if(!empty($rowProE['images6'])){
+                    $proIMG6 = $rowProE['images6'];
+                    ?>
+                    <br><br><img src="../uploads/product/<?php echo $proIMG6;?>" style="height: 150px;"/>
+                    <?php
+                  }
+                  ?>
+                  <input type="hidden" name="pro_images_old6" value="<?php echo $proIMG6;?>">
+                  <?php
+                }
+                ?>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label"><strong>Statistics</strong></label>
+              <div class="controls">
+                <hr>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Height :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_height" placeholder="" value="<?php if(isset($rowProE['pro_height'])){echo $rowProE['pro_height'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Eye Colour :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_eyecolour" placeholder="" value="<?php if(isset($rowProE['pro_eyecolour'])){echo $rowProE['pro_eyecolour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Bust :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_bust" placeholder="" value="<?php if(isset($rowProE['pro_bust'])){echo $rowProE['pro_bust'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Dress Size :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_dresssize" placeholder="" value="<?php if(isset($rowProE['pro_dresssize'])){echo $rowProE['pro_dresssize'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Tattoos :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_tattoos" placeholder="" value="<?php if(isset($rowProE['pro_tattoos'])){echo $rowProE['pro_tattoos'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Piercings :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_piercings" placeholder="" value="<?php if(isset($rowProE['pro_piercings'])){echo $rowProE['pro_piercings'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Smoker :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_smoker" placeholder="" value="<?php if(isset($rowProE['pro_smoker'])){echo $rowProE['pro_smoker'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Nationality :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_nationality" placeholder="" value="<?php if(isset($rowProE['pro_nationality'])){echo $rowProE['pro_nationality'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Languages :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_languages" placeholder="" value="<?php if(isset($rowProE['pro_languages'])){echo $rowProE['pro_languages'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Orientation :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_orientation" placeholder="" value="<?php if(isset($rowProE['pro_orientation'])){echo $rowProE['pro_orientation'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label"><strong>Rates</strong></label>
+              <div class="controls">
+                <hr>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">1 Hour :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_1hour" placeholder="" value="<?php if(isset($rowProE['pro_1hour'])){echo $rowProE['pro_1hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">1.5 Hours :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_15hour" placeholder="" value="<?php if(isset($rowProE['pro_15hour'])){echo $rowProE['pro_15hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">2 Hours :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_2hour" placeholder="" value="<?php if(isset($rowProE['pro_2hour'])){echo $rowProE['pro_2hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Dinner Date :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_dinnerhour" placeholder="" value="<?php if(isset($rowProE['pro_dinnerhour'])){echo $rowProE['pro_dinnerhour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">3 Hours :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_3hour" placeholder="" value="<?php if(isset($rowProE['pro_3hour'])){echo $rowProE['pro_3hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">4 Hours :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_4hour" placeholder="" value="<?php if(isset($rowProE['pro_4hour'])){echo $rowProE['pro_4hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">5 Hours :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_5hour" placeholder="" value="<?php if(isset($rowProE['pro_5hour'])){echo $rowProE['pro_5hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Overnight 10 Hours :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_10hour" placeholder="" value="<?php if(isset($rowProE['pro_10hour'])){echo $rowProE['pro_10hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Overnight 12 Hours :</label>
+              <div class="controls">
+                <input type="text" class="span11" name="pro_12hour" placeholder="" value="<?php if(isset($rowProE['pro_12hour'])){echo $rowProE['pro_12hour'];}?>">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label"><strong>Availability</strong></label>
+              <div class="controls">
+                <hr>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Mon :</label>
+              <div class="controls">
+                <input type="time" class="span11" name="pro_mon" placeholder="" value="<?php if(isset($rowProE['pro_mon'])){echo $rowProE['pro_mon'];}?>" style="width: 43%;"> <strong>TO</strong> <input type="time" class="span11" name="pro_mon2" placeholder="" value="<?php if(isset($rowProE['pro_mon2'])){echo $rowProE['pro_mon2'];}?>" style="width: 43%;">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Tue :</label>
+              <div class="controls">
+                <input type="time" class="span11" name="pro_tue" placeholder="" value="<?php if(isset($rowProE['pro_tue'])){echo $rowProE['pro_tue'];}?>" style="width: 43%;"> <strong>TO</strong> <input type="time" class="span11" name="pro_tue2" placeholder="" value="<?php if(isset($rowProE['pro_tue2'])){echo $rowProE['pro_tue2'];}?>" style="width: 43%;">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Wed :</label>
+              <div class="controls">
+                <input type="time" class="span11" name="pro_wed" placeholder="" value="<?php if(isset($rowProE['pro_wed'])){echo $rowProE['pro_wed'];}?>" style="width: 43%;"> <strong>TO</strong> <input type="time" class="span11" name="pro_wed2" placeholder="" value="<?php if(isset($rowProE['pro_wed2'])){echo $rowProE['pro_wed2'];}?>" style="width: 43%;">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Thu :</label>
+              <div class="controls">
+                <input type="time" class="span11" name="pro_thu" placeholder="" value="<?php if(isset($rowProE['pro_thu'])){echo $rowProE['pro_thu'];}?>" style="width: 43%;"> <strong>TO</strong> <input type="time" class="span11" name="pro_thu2" placeholder="" value="<?php if(isset($rowProE['pro_thu2'])){echo $rowProE['pro_thu2'];}?>" style="width: 43%;">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Fri :</label>
+              <div class="controls">
+                <input type="time" class="span11" name="pro_fri" placeholder="" value="<?php if(isset($rowProE['pro_fri'])){echo $rowProE['pro_fri'];}?>" style="width: 43%;"> <strong>TO</strong> <input type="time" class="span11" name="pro_fri2" placeholder="" value="<?php if(isset($rowProE['pro_fri2'])){echo $rowProE['pro_fri2'];}?>" style="width: 43%;">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Sat :</label>
+              <div class="controls">
+                <input type="time" class="span11" name="pro_sat" placeholder="" value="<?php if(isset($rowProE['pro_sat'])){echo $rowProE['pro_sat'];}?>" style="width: 43%;"> <strong>TO</strong> <input type="time" class="span11" name="pro_sat2" placeholder="" value="<?php if(isset($rowProE['pro_sat2'])){echo $rowProE['pro_sat2'];}?>" style="width: 43%;">
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">Sun :</label>
+              <div class="controls">
+                <input type="time" class="span11" name="pro_sun" placeholder="" value="<?php if(isset($rowProE['pro_sun'])){echo $rowProE['pro_sun'];}?>" style="width: 43%;"> <strong>TO</strong> <input type="time" class="span11" name="pro_sun2" placeholder="" value="<?php if(isset($rowProE['pro_sun2'])){echo $rowProE['pro_sun2'];}?>" style="width: 43%;">
               </div>
             </div>
             <div class="control-group hide">

@@ -133,6 +133,13 @@
 								}else{
 									$proImages5 = 'uploads/product/none.jpg';
 								}
+
+								$proImages6 = '';
+								if(!empty($rowPro['images6'])){
+									$proImages6 = 'uploads/product/'.$rowPro['images6'];
+								}else{
+									$proImages6 = 'uploads/product/none.jpg';
+								}
 							?>
 
 							<div class="slick3 gallery-lb">
@@ -203,6 +210,20 @@
 									</div>
 									<?php
 								}
+
+								if(!empty($rowPro['images6'])){
+									?>
+									<div class="item-slick3" data-thumb="<?php echo $proImages6;?>">
+										<div class="wrap-pic-w pos-relative">
+											<img src="<?php echo $proImages6;?>" alt="<?php echo $rowPro['name'];?>">
+
+											<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="<?php echo $proImages6;?>">
+												<i class="fa fa-expand"></i>
+											</a>
+										</div>
+									</div>
+									<?php
+								}
 								?>
 
 								<!-- <div class="item-slick3" data-thumb="images/product-detail-02.jpg">
@@ -239,14 +260,59 @@
 							<?php //echo LIAM_COINS_CURRENCY.number_format($rowPro['price'],2);?>
 						</span>
 
-						<p class="stext-102 cl3 p-t-23">
+						<p class="stext-102 cl3">
 							<?php echo stripslashes($rowPro['description']);?>
                         </p>
 
 						<!--  -->
-						<div class="p-t-33">
-							<div class="flex-w flex-r-m p-b-10">
-								<div class="size-204 flex-w flex-m respon6-next">
+						<div class="p-t-20">
+							<div class="p-b-10">
+								<div class="flex-w flex-m">
+								 <p class="mtext-105 cl2 js-name-detail p-b-14">Statistics</p>
+								 <table class="table tbcustom table-dark">
+									<tbody>
+										<tr>
+											<th scope="row">Height</th>
+											<td><?php echo $rowPro['pro_height'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Eye Colour</th>
+											<td><?php echo $rowPro['pro_eyecolour'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Bust</th>
+											<td><?php echo $rowPro['pro_bust'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Dress Size</th>
+											<td><?php echo $rowPro['pro_dresssize'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Tattoos</th>
+											<td><?php echo $rowPro['pro_tattoos'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Piercings</th>
+											<td><?php echo $rowPro['pro_piercings'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Smoker</th>
+											<td><?php echo $rowPro['pro_smoker'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Nationality</th>
+											<td><?php echo $rowPro['pro_nationality'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Languages</th>
+											<td><?php echo $rowPro['pro_languages'];?></td>
+										</tr>
+										<tr>
+											<th scope="row">Orientation</th>
+											<td><?php echo $rowPro['pro_orientation'];?></td>
+										</tr>
+									</tbody>
+								</table>
 									<!-- <div class="wrap-num-product flex-w m-r-20 m-tb-10">
 										<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
 											<i class="fs-16 zmdi zmdi-minus"></i>
@@ -266,6 +332,90 @@
 							</div>	
 						</div>
 
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-6 p-b-30">
+					<div class="flex-w flex-m">
+						<p class="mtext-105 cl2 js-name-detail p-b-14">Rates</p>
+						<table class="table tbcustom table-dark">
+							<tr>
+								<th>1 Hour</th>
+								<td><?php echo $rowPro['pro_1hour'];?></td>
+							</tr>
+							<tr>
+								<th>1.5 Hours</th>
+								<td><?php echo $rowPro['pro_15hour'];?></td>
+							</tr>
+							<tr>
+								<th>2 Hours</th>
+								<td><?php echo $rowPro['pro_2hour'];?></td>
+							</tr>
+							<tr>
+								<th>Dinner Date</th>
+								<td><?php echo $rowPro['pro_dinnerhour'];?></td>
+							</tr>
+							<tr>
+								<th>3 Hours</th>
+								<td><?php echo $rowPro['pro_3hour'];?></td>
+							</tr>
+							<tr>
+								<th>4 Hours</th>
+								<td><?php echo $rowPro['pro_4hour'];?></td>
+							</tr>
+							<tr>
+								<th>5 Hours</th>
+								<td><?php echo $rowPro['pro_5hour'];?></td>
+							</tr>
+							<tr>
+								<th>Overnight 10 Hours</th>
+								<td><?php echo $rowPro['pro_10hour'];?></td>
+							</tr>
+							<tr>
+								<th>Overnight 12 Hours</th>
+								<td><?php echo $rowPro['pro_12hour'];?></td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>Note: We charge an additional £50 for an escort to visit couples.</small></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-6 p-b-30">
+				<div class="flex-w flex-m">
+						<p class="mtext-105 cl2 js-name-detail p-b-14">Availability</p>
+						<table class="table tbcustom table-dark">
+							<tr>
+								<th>Mon</th>
+								<td><?php if(!empty($rowPro['pro_mon'])){echo $rowPro['pro_mon'].' - '.$rowPro['pro_mon2'];};?></td>
+							</tr>
+							<tr>
+								<th>Tue</th>
+								<td><?php if(!empty($rowPro['pro_tue'])){echo $rowPro['pro_tue'].' - '.$rowPro['pro_tue2'];};?></td>
+							</tr>
+							<tr>
+								<th>Wed</th>
+								<td><?php if(!empty($rowPro['pro_wed'])){echo $rowPro['pro_wed'].' - '.$rowPro['pro_wed2'];};?></td>
+							</tr>
+							<tr>
+								<th>Thu</th>
+								<td><?php if(!empty($rowPro['pro_thu'])){echo $rowPro['pro_thu'].' - '.$rowPro['pro_thu2'];};?></td>
+							</tr>
+							<tr>
+								<th>Fri</th>
+								<td><?php if(!empty($rowPro['pro_fri'])){echo $rowPro['pro_fri'].' - '.$rowPro['pro_fri2'];};?></td>
+							</tr>
+							<tr>
+								<th>Sat</th>
+								<td><?php if(!empty($rowPro['pro_sat'])){echo $rowPro['pro_sat'].' - '.$rowPro['pro_sat'];};?></td>
+							</tr>
+							<tr>
+								<th>Sun</th>
+								<td><?php if(!empty($rowPro['pro_sun'])){echo $rowPro['pro_sun'].' - '.$rowPro['pro_sun'];};?></td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
